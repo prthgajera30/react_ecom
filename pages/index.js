@@ -1,18 +1,18 @@
-import Head from 'next/head'
-import {useQuery} from "urql";
-import {PRODUCT_QUERY} from "../lib/query";
+import Head from "next/head";
+import { useQuery } from "urql";
+import { PRODUCT_QUERY } from "../lib/query";
 import Products from "../components/products";
-import {Gallary} from "../styles/Gallary";
+import { Gallary } from "../styles/Gallary";
 export default function Home() {
   //fetch products from strapi
 
-  const [results] = useQuery({query: PRODUCT_QUERY});
-  const {data, fetching, error} = results;
+  const [results] = useQuery({ query: PRODUCT_QUERY });
+  const { data, fetching, error } = results;
 
   //check for data coming in
 
-  if (fetching) return  <p> Loading ...</p>
-  if (error) return <p> Error {error.message}</p>
+  if (fetching) return <p> Loading ...</p>;
+  if (error) return <p> Error {error.message}</p>;
 
   const products = data.products.data;
   return (
@@ -25,12 +25,11 @@ export default function Home() {
       </Head>
       <main>
         <Gallary>
-            {products.map((product) =>(
-                <Products key={product.attributes.Slug} product={product}/>
-            ))}
+          {products.map((product) => (
+            <Products key={product.attributes.Slug} product={product} />
+          ))}
         </Gallary>
-
       </main>
     </>
-  )
+  );
 }

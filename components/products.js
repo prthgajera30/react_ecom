@@ -8,7 +8,7 @@ export default function Products({ product }) {
       <div>
         <img src={Image.data[0].attributes.formats.small.url} />
       </div>
-      <h2>{Title}</h2>
+      <h2>{Title} </h2>
       <h3>{Price} €</h3>
     </ProductStyle>
   );
