@@ -3,6 +3,7 @@ import { useQuery } from "urql";
 import { PRODUCT_QUERY } from "../lib/query";
 import Products from "../components/products";
 import { Gallary } from "../styles/Gallary";
+
 export default function Home() {
   //fetch products from strapi
 
