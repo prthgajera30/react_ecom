@@ -1,6 +1,6 @@
 html,
 body {
-  margin: 0rem 10%;
+  margin: 0 10%;
   background: #f1f1f1;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -16,6 +16,7 @@ h2 {
 h3 {
   font-size: 1rem;
   color: var(--secondary);
+  width: auto;
 }
 
 a {
