@@ -30,7 +30,7 @@ export default function ProductDetails() {
   if (error) return <p> Error {error.message}</p>;
 
   //extract the data
-  const { Title, Description, Image } = data.products.data[0].attributes;
+  const { Title, Description, Image, Price } = data.products.data[0].attributes;
 
   return (
     <DetailsStyle>
@@ -38,8 +38,9 @@ export default function ProductDetails() {
       <ProductInfo>
         <h2>{Title}</h2>
         <p>{Description}</p>
+        <h3>Price: {Price} €</h3>
         <Quantity>
-          <span>Quantity</span>
+          <span>Quantity:</span>
           <button>
             <AiFillMinusCircle onClick={decreaseQty} />
           </button>

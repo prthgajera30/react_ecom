@@ -64,3 +64,15 @@ export const EmptyStyle = styled.div`
     padding: 2rem;
   }
 `;
+
+export const Checkout = styled.div`
+  button {
+    background: var(--primary);
+    padding: 0.7rem 1rem;
+    width: 100%;
+    color: white;
+    margin-top: 2rem;
+    cursor: pointer;
+    border: none;
+  }
+`;

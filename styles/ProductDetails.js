@@ -13,11 +13,14 @@ export const ProductInfo = styled.div`
   button {
     font-size: 1rem;
     font-weight: normal;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     cursor: pointer;
   }
   h2 {
     padding-bottom: 1rem;
+  }
+  h3 {
+    margin-top: 2rem;
   }
 `;
 
@@ -37,6 +40,7 @@ export const Quantity = styled.div`
   }
   span {
     color: var(--secondary);
+    font-weight: bold;
   }
   svg {
     color: #494949;
