@@ -22,6 +22,9 @@ export const ProductInfo = styled.div`
   h3 {
     margin-top: 2rem;
   }
+  p {
+    font-size: smaller;
+  }
 `;
 
 export const Quantity = styled.div`
