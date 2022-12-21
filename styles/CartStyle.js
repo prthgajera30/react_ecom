@@ -18,8 +18,8 @@ export const CartWrapper = styled(motion.div)`
 export const CartStyle = styled(motion.div)`
   width: 30%;
   background-color: #f1f1f1;
-  padding: 2rem 5rem;
-  overflow-y: scroll;
+  padding: 1rem 2.5rem;
+  overflow-y: auto;
   position: relative;
 `;
 
