@@ -16,9 +16,9 @@ export const CartWrapper = styled(motion.div)`
 `;
 
 export const CartStyle = styled(motion.div)`
-  width: 25%;
+  width: 28%;
   background-color: #f1f1f1;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2rem;
   overflow-y: auto;
   position: relative;
 `;
@@ -45,6 +45,9 @@ export const CardInfo = styled(motion.div)`
   div {
     display: flex;
     justify-content: space-between;
+  }
+  button {
+    padding: 0 0.5rem;
   }
 `;
 
@@ -81,3 +84,5 @@ export const Checkout = styled(motion.div)`
     border: none;
   }
 `;
+
+export const Cards = styled(motion.div)``;
