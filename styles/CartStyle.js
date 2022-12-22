@@ -16,7 +16,7 @@ export const CartWrapper = styled(motion.div)`
 `;
 
 export const CartStyle = styled(motion.div)`
-  width: 30%;
+  width: 25%;
   background-color: #f1f1f1;
   padding: 1rem 2.5rem;
   overflow-y: auto;
@@ -32,6 +32,7 @@ export const Card = styled(motion.div)`
   background: white;
   padding: 2rem;
   margin: 2rem 0;
+
   img {
     width: 6rem;
     height: 8rem;
@@ -40,6 +41,7 @@ export const Card = styled(motion.div)`
 
 export const CardInfo = styled(motion.div)`
   width: 50%;
+
   div {
     display: flex;
     justify-content: space-between;
@@ -56,10 +58,12 @@ export const EmptyStyle = styled(motion.div)`
   justify-content: center;
   height: 100%;
   width: 100%;
+
   svg {
     font-size: 10rem;
     color: var(--secondary);
   }
+
   h1 {
     font-size: 2rem;
     padding: 2rem;

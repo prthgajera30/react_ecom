@@ -13,13 +13,15 @@ export const ProductStyle = styled.div`
   overflow: hidden;
 
   :hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
     box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   }
+
   img {
     width: 100%;
     cursor: pointer;
   }
+
   h2,
   h3 {
     padding: 0.5rem 1rem;
