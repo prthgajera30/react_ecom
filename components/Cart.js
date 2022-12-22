@@ -1,11 +1,11 @@
 import { useStateContext } from "../lib/context";
 import {
-  CartWrapper,
-  CartStyle,
   Card,
   CardInfo,
-  EmptyStyle,
+  CartStyle,
+  CartWrapper,
   Checkout,
+  EmptyStyle,
 } from "../styles/CartStyle";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
@@ -31,7 +31,7 @@ export default function Cart() {
           <EmptyStyle
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.2 }}
           >
             <h2> You have more shopping to do &#128540; </h2>
             <FaShoppingCart />
