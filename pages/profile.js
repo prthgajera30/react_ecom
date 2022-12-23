@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
-
+import formatMoney from "../lib/formatMoney";
 const stripe = require("stripe")(
   `${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`
 );
@@ -29,9 +29,18 @@ export default function Profile({ user, orders }) {
         <div>
           {orders.map((order) => (
             <Order>
-              <h2>Order Number: {order.id}</h2>
-              <h2>{order.amount}</h2>
-              <h2>Receipt Email: {user.email}</h2>
+              <h3>
+                Order Number
+                <p> : {order.id}</p>
+              </h3>
+              <h3>
+                Amount
+                <p> : {formatMoney(order.amount)}</p>
+              </h3>
+              <h3>
+                Receipt Email
+                <p> : {user.email}</p>
+              </h3>
             </Order>
           ))}
         </div>
@@ -46,4 +55,9 @@ const Order = styled.div`
   padding: 2rem;
   display: flex;
   justify-content: space-between;
+  border-radius: 1rem;
+  p {
+    display: inline;
+    font-weight: normal;
+  }
 `;

@@ -3,6 +3,7 @@ import Image from "next/image";
 import kitten from "/public/kindpng_6866117.png";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import formatMoney from "../lib/formatMoney";
 
 const stripe = require("stripe")(
   `${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`
@@ -18,7 +19,6 @@ export async function getServerSideProps(params) {
 }
 export default function Success({ order }) {
   const route = useRouter();
-  console.log(order);
   return (
     <Wrapper>
       <Card
@@ -45,7 +45,7 @@ export default function Success({ order }) {
               <div key={item.id}>
                 <p>Product: {item.description}</p>
                 <p>Quantity: {item.quantity}</p>
-                <p>Price: {item.price.unit_amount / 100} €</p>
+                <p>Price: {formatMoney(item.price.unit_amount)}</p>
               </div>
             ))}
           </OrderInfo>
