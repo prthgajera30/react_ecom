@@ -2,14 +2,13 @@ import { useRouter } from "next/router";
 import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import styled from "styled-components";
 import formatMoney from "../lib/formatMoney";
+
 const stripe = require("stripe")(
   `${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`
 );
-console.log(stripe);
 export const getServerSideProps = withPageAuthRequired({
   async getServerSideProps(ctx) {
     const session = await getSession(ctx.req, ctx.res);
-    console.log(session);
     const stripeId = session.user[`${process.env.BASE_URL}/stripe_customer_id`];
     const paymentIntents = await stripe.paymentIntents.list({
       customer: stripeId,
@@ -59,6 +58,7 @@ const Order = styled.div`
   display: flex;
   justify-content: space-between;
   border-radius: 1rem;
+
   p {
     display: inline;
     font-weight: normal;

@@ -12,6 +12,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import { Quantity } from "../styles/ProductDetails";
 import getStripe from "../lib/getStripe";
+import formatMoney from "../lib/formatMoney";
 
 // Animation variants
 
@@ -99,7 +100,7 @@ export default function Cart() {
         </Cards>
         {cartItems.length >= 1 && (
           <Checkout layout>
-            <h3>Subtotal: {totalPrice} €</h3>
+            <h3>Subtotal: {formatMoney(totalPrice)} €</h3>
             <button onClick={handleCheckout}>Purchase</button>
           </Checkout>
         )}

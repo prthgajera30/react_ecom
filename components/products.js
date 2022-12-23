@@ -3,7 +3,6 @@ import Link from "next/link";
 
 export default function Products({ product }) {
   const { Title, Price, Image, Slug } = product.attributes;
-  console.log(Image);
   return (
     <ProductStyle>
       <Link href={`product/${Slug}`}>
