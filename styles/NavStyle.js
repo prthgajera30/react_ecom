@@ -7,6 +7,7 @@ export const NavStyle = styled.nav`
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
+
   a {
     color: var(--secondary);
     font-size: 2rem;
@@ -17,6 +18,8 @@ export const NavItems = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  cursor: pointer;
+
   div {
     margin-left: 3rem;
     position: relative;
@@ -24,13 +27,16 @@ export const NavItems = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
   h3 {
     font-size: 1rem;
     padding: 0.25rem;
   }
+
   svg {
     font-size: 1.5rem;
   }
+
   span {
     background: #ff2626;
     color: white;
