@@ -33,6 +33,9 @@ export const Card = styled(motion.div)`
   padding: 2rem;
   margin: 2rem 0;
 
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
+    rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+
   img {
     width: 6rem;
     height: 8rem;
@@ -75,13 +78,10 @@ export const EmptyStyle = styled(motion.div)`
 
 export const Checkout = styled(motion.div)`
   button {
-    background: var(--primary);
-    padding: 0.7rem 1rem;
+    padding: 0.5rem 0;
     width: 100%;
-    color: white;
     margin-top: 2rem;
     cursor: pointer;
-    border: none;
   }
 `;
 

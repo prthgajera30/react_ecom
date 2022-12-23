@@ -39,3 +39,15 @@ p {
   line-height: 150%;
   color: var(--secondary);
 }
+
+button {
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: white;
+  color: var(--primary);
+}

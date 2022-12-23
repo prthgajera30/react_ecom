@@ -22,36 +22,39 @@ export default function Profile({ user, orders }) {
   const route = useRouter();
   return (
     user && (
-      <div>
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-        <button onClick={() => route.push("/api/auth/logout")}>Logout</button>
-        <div>
-          {orders.map((order) => (
-            <Order>
-              <h3>
-                Order Number
-                <p> : {order.id}</p>
-              </h3>
-              <h3>
-                Amount
-                <p> : {formatMoney(order.amount)}</p>
-              </h3>
-              <h3>
-                Receipt Email
-                <p> : {user.email}</p>
-              </h3>
-            </Order>
-          ))}
-        </div>
-      </div>
+      <ProfileWrapper>
+        <ProfileHead>
+          <div>
+            <h2>{user.name}</h2>
+            <p>{user.email}</p>
+          </div>
+          <button onClick={() => route.push("/api/auth/logout")}>Logout</button>
+        </ProfileHead>
+        <br />
+        {orders.map((order) => (
+          <Order>
+            <h3>
+              Order Number
+              <p> : {order.id}</p>
+            </h3>
+            <h3>
+              Amount
+              <p> : {formatMoney(order.amount)}</p>
+            </h3>
+            <h3>
+              Receipt Email
+              <p> : {user.email}</p>
+            </h3>
+          </Order>
+        ))}
+      </ProfileWrapper>
     )
   );
 }
 
 const Order = styled.div`
   background: white;
-  margin: 2rem 0;
+  margin: 1rem 0;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
@@ -60,4 +63,16 @@ const Order = styled.div`
     display: inline;
     font-weight: normal;
   }
+`;
+
+const ProfileWrapper = styled.div`
+  button {
+    padding: 0.5rem 3rem;
+    margin: 1.5rem 0;
+  }
+`;
+
+const ProfileHead = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

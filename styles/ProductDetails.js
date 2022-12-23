@@ -12,7 +12,6 @@ export const ProductInfo = styled.div`
   width: 40%;
   button {
     font-size: 1rem;
-    font-weight: normal;
     padding: 0.7rem 1rem;
     cursor: pointer;
   }
@@ -52,7 +51,4 @@ export const Quantity = styled.div`
 
 export const Buy = styled.button`
   width: 100%;
-  background: var(--primary);
-  color: white;
-  font-weight: 500;
 `;
