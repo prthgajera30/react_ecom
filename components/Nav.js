@@ -15,7 +15,7 @@ export default function Nav() {
   if (error) return <div>{error.message}</div>;
   return (
     <NavStyle>
-      <Link href={"/"}>Fashion</Link>
+      <Link href={"/"}>Fashion.ed</Link>
       <NavItems>
         <User />
         <div onClick={() => setShowCart(true)}>

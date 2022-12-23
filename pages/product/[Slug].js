@@ -9,11 +9,17 @@ import {
 } from "../../styles/ProductDetails";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import { useStateContext } from "../../lib/context";
+import toast from "react-hot-toast";
+import { useEffect } from "react";
 
 export default function ProductDetails() {
   // fetching default qty state
-  const { qty, increaseQty, decreaseQty, onAdd } = useStateContext();
+  const { qty, increaseQty, decreaseQty, onAdd, setQty } = useStateContext();
 
+  // reset quantity
+  useEffect(() => {
+    setQty(1);
+  }, []);
   // fetching slug
   const { query } = useRouter();
 
@@ -32,6 +38,18 @@ export default function ProductDetails() {
   //extract the data
   const { Title, Description, Image, Price } = data.products.data[0].attributes;
 
+  // Creat Toast
+  const notify = () => {
+    toast.success(`${Title} added to the cart`, {
+      duration: 1500,
+      icon: "😊",
+      style: {
+        borderRadius: "10px",
+        background: "#333",
+        color: "#fff",
+      },
+    });
+  };
   return (
     <DetailsStyle>
       <img src={Image.data[0].attributes.formats.medium.url} alt={Title} />
@@ -49,7 +67,12 @@ export default function ProductDetails() {
             <AiFillPlusCircle onClick={increaseQty} />
           </button>
         </Quantity>
-        <Buy onClick={() => onAdd(data.products.data[0].attributes, qty)}>
+        <Buy
+          onClick={() => {
+            onAdd(data.products.data[0].attributes, qty);
+            notify();
+          }}
+        >
           Add to Cart
         </Buy>
       </ProductInfo>
